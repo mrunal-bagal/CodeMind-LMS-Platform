@@ -1,0 +1,38 @@
+import React, { useEffect } from 'react';
+import { useSelector } from 'react-redux';
+import { Outlet } from "react-router-dom";
+import Sidebar from '../components/core/Dashboard/Sidebar';
+import Loading from '../components/common/Loading';
+
+const Dashboard = () => {
+    const { loading: authLoading } = useSelector((state) => state.auth);
+    const { loading: profileLoading } = useSelector((state) => state.profile);
+
+    if (profileLoading || authLoading) {
+        return (
+            <div className="mt-10">
+                <Loading />
+            </div>
+        );
+    }
+
+    // Scroll to the top of the page when the component mounts
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
+
+    return (
+        <div className="relative flex min-h-[calc(100vh-3.5rem)] overflow-hidden">
+            <Sidebar />
+
+            {/* Main Content Wrapper (Prevents Full Page Scroll, Allows Internal Scrolling) */}
+            <div className="flex-1 h-full overflow-hidden">
+                <div className="mx-auto w-11/12 max-w-[1000px] py-10 h-full overflow-y-auto scrollbar-hide">
+                    <Outlet />
+                </div>
+            </div>
+        </div>
+    );
+};
+
+export default Dashboard;
