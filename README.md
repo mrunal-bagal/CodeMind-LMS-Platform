@@ -5,7 +5,11 @@ Codemind is a comprehensive online learning platform similar in concept to Udemy
 
 🚀Core Features:
 🖼️Course Development & Control: Instructors can upload video lectures, attach learning resources, include quizzes, and define course pricing.
+
 🔐Authentication System: Provides secure sign-up and login functionality with role-based permissions for learners and instructors.
+
 ⚡Course Enrollment System: Learners can discover, purchase, and join courses while tracking their progress in real time.
+
 💳Online Payments: Integrated secure payment solutions for accessing paid courses.
+
 🌟Feedback & Ratings: Learners can share reviews and rate courses to improve credibility and course quality.
